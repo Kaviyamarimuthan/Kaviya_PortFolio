@@ -27,7 +27,7 @@ export default function ScrollReveal({
           observer.unobserve(el);
         }
       },
-      { threshold: 0.12 }
+      { threshold: 0.12 },
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -37,8 +37,8 @@ export default function ScrollReveal({
     variant === "left"
       ? "reveal-left"
       : variant === "scale"
-      ? "reveal-scale"
-      : "reveal";
+        ? "reveal-scale"
+        : "reveal";
 
   return (
     <div ref={ref} className={`${base} ${className}`}>

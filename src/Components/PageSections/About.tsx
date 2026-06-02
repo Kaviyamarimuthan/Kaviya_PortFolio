@@ -1,3 +1,5 @@
+"use client";
+import Link from "next/link";
 import ScrollReveal from "../ScrollReveal";
 
 const facts = [
@@ -39,6 +41,18 @@ const traits = [
 ];
 
 export default function AboutPage() {
+
+  // Download CV
+  const handleClickDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/cv/Kaviya_FE_Dev_Resume.pdf";
+    link.download = "Kaviya_Frontend_Resume.pdf";
+    // adds the a tagto the Forefox
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <main className="page-wrapper">
       {/* ── Header ── */}
@@ -52,14 +66,7 @@ export default function AboutPage() {
       <hr className="glow-divider" />
 
       {/* ── Two-col intro ── */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "3rem",
-          alignItems: "start",
-        }}
-      >
+      <div className="grid grid-cols-2 gap-12 items-start max-[800px]:grid-cols-1">
         {/* Left — bio */}
         <ScrollReveal variant="left">
           <div
@@ -117,16 +124,12 @@ export default function AboutPage() {
                 marginTop: "0.5rem",
               }}
             >
-              <a href="/contact" className="btn-primary">
+              <Link href="/contact" className="btn-primary">
                 Let&apos;s work together →
-              </a>
-              <a
-                href="/KAVIYA_FE_Resume.pdf"
-                download
-                className="btn-secondary"
-              >
+              </Link>
+              <button onClick={handleClickDownload} className="btn-secondary">
                 Download CV
-              </a>
+              </button>
             </div>
           </div>
         </ScrollReveal>
@@ -218,6 +221,7 @@ export default function AboutPage() {
           gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
           gap: "1.25rem",
         }}
+        className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-5"
       >
         {traits.map((t, i) => (
           <ScrollReveal key={t.title} delay={i * 100} variant="scale">
@@ -296,20 +300,31 @@ export default function AboutPage() {
               margin: "0 auto",
             }}
           >
-            Worked full-time at Piccosoft, contributed to a{" "}
+            Worked full-time at Piccosoft, shipping two production platforms —{" "}
             <span style={{ color: "var(--text-primary)", fontWeight: 500 }}>
-              Food Traceability Platform
+              a B2C E-Commerce Marketplace
             </span>{" "}
-            — built role-based dashboards for admins, suppliers, and auditors,
-            and gained hands-on experience with{" "}
+            and{" "}
+            <span style={{ color: "var(--text-primary)", fontWeight: 500 }}>
+              a B2B Food Traceability Platform
+            </span>{" "}
+            — while deepening expertise in{" "}
             <span style={{ color: "var(--cyan)", fontWeight: 500 }}>
-              Next.js App Router
+              performance optimization
             </span>
             ,{" "}
             <span style={{ color: "var(--purple)", fontWeight: 500 }}>
-              TypeScript patterns
+              scalable architecture
             </span>
-            , and scalable state management.
+            , and reusable component systems with{" "}
+            <span style={{ color: "var(--cyan)", fontWeight: 500 }}>
+              Next.js
+            </span>{" "}
+            and{" "}
+            <span style={{ color: "var(--purple)", fontWeight: 500 }}>
+              TypeScript
+            </span>
+            .
           </p>
         </div>
       </ScrollReveal>
