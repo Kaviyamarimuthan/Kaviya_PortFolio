@@ -1,0 +1,54 @@
+<svg
+  width="48"
+  height="48"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+
+  <defs>
+    <!-- Exact Tailwind Gradient -->
+    <linearGradient
+      id="menuGradient"
+      x1="0"
+      y1="0"
+      x2="48"
+      y2="48"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0%" stop-color="#00D4FF"/>
+      <stop offset="100%" stop-color="#7C6BFF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Top Line -->
+  <rect
+    x="8"
+    y="10"
+    width="32"
+    height="4"
+    rx="2"
+    fill="url(#menuGradient)"
+  />
+
+  <!-- Middle Line -->
+  <rect
+    x="8"
+    y="22"
+    width="32"
+    height="4"
+    rx="2"
+    fill="url(#menuGradient)"
+  />
+
+  <!-- Bottom Line -->
+  <rect
+    x="8"
+    y="34"
+    width="32"
+    height="4"
+    rx="2"
+    fill="url(#menuGradient)"
+  />
+
+</svg>
