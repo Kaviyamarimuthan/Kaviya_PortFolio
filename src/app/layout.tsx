@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/Components/HeaderHome";
+import Header from "@/Components/Header";
 
 export const metadata: Metadata = {
   title: "Kaviya M — Frontend React Developer",
   description:
     "Frontend React Developer with 2+ years building production-ready web apps with React.js, Next.js & TypeScript. Based in Chennai, India.",
+    icons:{
+      icon:"/img/kavi_icon.png"
+    }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
